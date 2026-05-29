@@ -1,0 +1,14 @@
+# 编译产物
+/<你的仓库名>
+*.exe
+*.test
+*.out
+
+# GoLand
+.idea/
+
+# macOS
+.DS_Store
+
+# 密钥
+.env
