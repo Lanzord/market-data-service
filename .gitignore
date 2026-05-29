@@ -1,5 +1,5 @@
-# 编译产物
-/<你的仓库名>
+# Build artifacts
+/market-data-service
 *.exe
 *.test
 *.out
