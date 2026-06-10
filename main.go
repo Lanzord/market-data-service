@@ -14,5 +14,8 @@ func main() {
 	mux.HandleFunc("GET /ping", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "pong")
 	})
+	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "Server is healthy")
+	})
 	http.ListenAndServe(":8080", mux)
 }
