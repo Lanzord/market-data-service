@@ -6,11 +6,13 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	mux := http.NewServeMux()
+
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "Hello from my market data service")
 	})
-	http.HandleFunc("GET /ping", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("GET /ping", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "pong")
 	})
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", mux)
 }
